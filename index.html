@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name=
+    "viewport">
+    <meta content="" name="description">
+    <meta content="" name="author">
+    <title>
+      Heart Disease Classifier
+    </title><!-- Favicon-->
+    <link href="https://media.giphy.com/media/PU2fFOa1ge9n6BNFqj/giphy.gif" rel="icon" type="image/x-icon">
+    <!-- Font Awesome icons (free version)-->
+
+    <script crossorigin="anonymous" src=
+    "https://use.fontawesome.com/releases/v6.1.0/js/all.js"></script><!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+    rel="stylesheet" type="text/css">
+    <link href=
+    "https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
+    rel="stylesheet" type="text/css">
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+  <body id="page-top">
+    <!-- Navigation-->
+
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top"
+    id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="#page-top">Parallel Processing</a>
+        <button aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation" class=
+        "bg-primary navbar-toggler text-uppercase font-weight-bold text-white rounded"
+        data-bs-target="#navbarResponsive" data-bs-toggle="collapse" type=
+        "button">Menu <i class="fas fa-bars"></i></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded" href=
+              "#intro">Introduction</a>
+            </li>
+
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#eda">EDA</a>
+            </li>
+
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#ml">Machine
+              Learning</a>
+            </li>
+
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded" href=
+              "#conclusion">Conclusion</a>
+            </li>
+
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About
+              Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Masthead-->
+
+    <header class="masthead bg-primary text-white text-center">
+      <div class="container d-flex align-items-center flex-column">
+        <!-- Masthead Avatar Image-->
+        <img alt="..." class="masthead-avatar mb-5" src=
+        "https://media.giphy.com/media/PU2fFOa1ge9n6BNFqj/giphy.gif"> 
+        <!-- Masthead Heading-->
+
+        <h1 class="masthead-heading text-uppercase mb-0">
+          Heart Disease Classifier
+        </h1>
+        <!-- Icon Divider-->
+
+        <div class="divider-custom divider-light">
+          <div class="divider-custom-line">
+          </div>
+
+          <div class="divider-custom-icon">
+            <i class="fas fa-star"></i>
+          </div>
+
+          <div class="divider-custom-line">
+          </div>
+        </div>
+        <!-- Masthead Subheading-->
+
+        <p class="masthead-subheading font-weight-light mb-0">
+          Using data science to make impactful decisions on medicine to benefit
+          society
+        </p>
+      </div>
+    </header>
+    <!-- Heart Disease-->
+
+    <section id="intro">
+      <div class="container">
+        <!-- Goals Heading-->
+
+        <br>
+        <br>
+        <br>
+
+        <h2 class=
+        "page-section-heading text-center text-uppercase text-secondary mb-0">
+          What are our goals?
+        </h2>
+        <!-- Icon Divider-->
+
+        <div class="divider-custom">
+          <div class="divider-custom-line">
+          </div>
+
+          <div class="divider-custom-icon">
+            <i class="fas fa-star"></i>
+          </div>
+
+          <div class="divider-custom-line">
+          </div>
+        </div>
+        <!-- About Section Content-->
+
+        <div class="row">
+          <div>
+            <p class="lead">
+              <b>Heart disease</b> is an extremely broad category. While there are
+              several heart specific diseases such as <b>heart rhythm problems (arrythmias)</b> and <b> congenital heart defects </b>(ones people are born
+              with), several can influence the entire <b>cardiovascular system.</b>
+              This includes all the blood vessels that run throughout the body.
+              In these blood vessels several other diseases, such as
+              <b>atherosclerosis</b> (a plaque accumulation in the arteries) can
+              occur. If the heart can’t pump blood properly, it will eventually
+              cause functions in other parts of the body, especially the lungs
+              and kidneys to be disrupted. This disruption may lead to swelling
+              in the legs, shortness of breath and eventually heart failure.
+              It's important to know how vital a properly functioning heart is,
+              which only increases the imperativeness to prevent any heart
+              disease by detecting the risk.
+            </p>
+
+            <hr>
+            
+          </div>
+          <div class="col-lg-4">
+            <img src = 'https://img.freepik.com/free-vector/doctor-with-stethoscope-listening-huge-heart-beat-ischemic-heart-disease_335657-4397.jpg?size=626&ext=jpg&ga=GA1.2.109325630.1659561389'>
+          </div>
+          <div class="col-lg-4 me-auto">
+            <p class="lead">
+              There are two main types of risk factors for any medical
+              condition: <b> Modifiable </b> and <b>Non-modifiable</b>. Modifiable risk factors
+              are based on a person’s life choices, such as diet and general
+              lifestyle. Non-modifiable risk factors are based on factors out
+              of an individual’s control, such as family medical history, sex,
+              and age. Both can cause equal susceptibility to heart problems,
+              but only modifiable risk factors can be prevented and taken care
+              of.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="page-section bg-primary text-white mb-0" id="EDA">
+      <div class="container">
+        <!-- EDA Section Heading-->
+
+        <h2 class="page-section-heading text-center text-uppercase text-white">
+          Exploratory Data Analysis
+        </h2>
+        <!-- Icon Divider-->
+
+        <div class="divider-custom divider-light">
+          <div class="divider-custom-line">
+          </div>
+
+          <div class="divider-custom-icon">
+            <i class="fas fa-star"></i>
+          </div>
+
+          <div class="divider-custom-line">
+          </div>
+        </div>
+        <!-- EDA Section Content-->
+
+        <div class="row">
+          <div class="col-lg-4 ms-auto">
+            <p class="lead">
+              Our visualizations were made to help us better analyze our data. 
+Here is what we found out:
+
+              <li>Correlations among the columns</li>
+
+              <li> The number of columns </li>
+
+              <li> The size of our dataset </li>
+
+              <li> Visual analysis of our data </li>
+
+            
+              
+            
+            
+           
+          </div>
+          <div class="col-lg-4 ms-auto">
+           <img src = "http://aress.us/assets/images/AI_bigdata/AI_bigdata.png" width = 500 height = 500>
+        </div>
+      </div>
+      </div>
+    </section>
+    <!-- Portfolio Section-->
+
+    <section class="page-section portfolio" id="eda">
+      <div class="container">
+        <!-- Portfolio Section Heading-->
+
+        <h2 class=
+        "page-section-heading text-center text-uppercase text-secondary mb-0">
+          Visualizations
+        </h2>
+        <!-- Icon Divider-->
+
+        <div class="divider-custom">
+          <div class="divider-custom-line">
+          </div>
+
+          <div class="divider-custom-icon">
+            <i class="fas fa-star"></i>
+          </div>
+
+          <div class="divider-custom-line">
+          </div>
+        </div>
+        <!-- -->
+
+        <div class="row justify-content-center">
+          <!-- https://media.geeksforgeeks.org/wp-content/uploads/graph-plotting-2.png-->
+
+          <div class="col-md-6 col-lg-4 mb-5">
+            <div class="portfolio-item mx-auto" data-bs-target=
+            "#portfolioModal1" data-bs-toggle="modal">
+              <div class=
+              "portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                <div class=
+                "portfolio-item-caption-content text-center text-white">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img alt="..." class="img-fluid" src=
+              "https://media.istockphoto.com/vectors/software-development-for-different-devices-process-of-optimization-vector-id1291886933?k=20&m=1291886933&s=612x612&w=0&h=A3pR7QBG3j33tu5sFgdpnp-YdLoBIa7r_0uk8__HlwI=">
+            </div>
+          </div>
+          <!-- Portfolio Item 2-->
+
+          <div class="col-md-6 col-lg-4 mb-5">
+            <div class="portfolio-item mx-auto" data-bs-target=
+            "#portfolioModal2" data-bs-toggle="modal">
+              <div class=
+              "portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                <div class=
+                "portfolio-item-caption-content text-center text-white">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img alt="..." class="img-fluid"  src=
+              "https://code.org/images/fill-485x235/oceans/ai_2020_overview.png"
+             >
+            </div>
+          </div>
+          <!-- Portfolio Item 3-->
+
+          <div class="col-md-6 col-lg-4 mb-5">
+            <div class="portfolio-item mx-auto" data-bs-target=
+            "#portfolioModal3" data-bs-toggle="modal">
+              <div class=
+              "portfolio-item-caption d-flex align-items-center justify-content-center h-500 w-400">
+                <div class=
+                "portfolio-item-caption-content text-center text-white">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img alt="..." class="img-fluid" src=
+              "https://www.healthcareitnews.com/sites/hitn/files/BHF.jpg">
+            </div>
+          </div>
+          <!-- Portfolio Item 4-->
+
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+            <div class="portfolio-item mx-auto" data-bs-target=
+            "#portfolioModal4" data-bs-toggle="modal">
+              <div class=
+              "portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                <div class=
+                "portfolio-item-caption-content text-center text-white">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img alt="..." class="img-fluid" src=
+              "https://axiomtek-medical.com/wp-content/uploads/2019/03/AdobeStock_181321930-1080x609.png">
+            </div>
+          </div>
+          <!-- Portfolio Item 5-->
+
+          <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
+            <div class="portfolio-item mx-auto" data-bs-target=
+            "#portfolioModal5" data-bs-toggle="modal">
+              <div class=
+              "portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                <div class=
+                "portfolio-item-caption-content text-center text-white">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img alt="..." class="img-fluid" src=
+              "https://www.economist.com/img/b/1190/670/90/sites/default/files/images/2015/09/blogs/economist-explains/code2.png">
+            </div>
+          </div>
+          <!-- Portfolio Item 6-->
+
+          <div class="col-md-6 col-lg-4">
+            <div class="portfolio-item mx-auto" data-bs-target=
+            "#portfolioModal6" data-bs-toggle="modal">
+              <div class=
+              "portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                <div class=
+                "portfolio-item-caption-content text-center text-white">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img alt="..." class="img-fluid" src=
+              "https://media.istockphoto.com/vectors/data-analysis-vector-illustration-with-young-woman-sitting-in-front-vector-id1325034866?k=20&m=1325034866&s=612x612&w=0&h=vzbDYZxERWPkGl7U0ejPtSGkgCjlcO0nR_DTkezpEGU=">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Data Cleaning Section-->
+
+    <section class="page-section bg-primary text-white mb-0" id="EDA">
+      <div class="container">
+        <!-- Data Cleaning Section Heading-->
+
+        <h2 class="page-section-heading text-center text-uppercase text-white">
+          Data Cleaning
+        </h2>
+        <!-- Icon Divider-->
+
+        <div class="divider-custom divider-light">
+          <div class="divider-custom-line">
+          </div>
+
+          <div class="divider-custom-icon">
+            <i class="fas fa-star"></i>
+          </div>
+
+          <div class="divider-custom-line">
+          </div>
+        </div>
+        <!-- Data Cleaning Section Content-->
+
+        <div class="row">
+          <div class="col-lg-4 ms-auto">
+            <p class="lead">
+              Data cleaning is the process of fixing or removing incorrect, corrupted, incorrectly formatted, duplicate, or incomplete data                within a dataset. This improves the quality of the training data for analytics and enables accurate decision-making.
+            </p>
+            <br>
+            <p>
+              For our dataset, we performed the steps below to get a cleaner dataset that would be more suitable for our machine learning models:
+            </p>
+            <ul>
+              <li>Removed <b>null/missing values</b> using <i>df.dropna()</i>
+</li>
+              <li>Took out <b>outliers</b> that weren't used in the models</li>
+              <li>Created easier and more <b>simple data</b> to read and understand</li>
+            </ul>
+          </div>
+          <div class="col-lg-4 ms-auto">
+           <img src = "https://icinga.com/wp-content/uploads/2021/11/PngItem_745350-e1635983033752.png" width = 500 height = 500>
+        </div>
+      </div>
+      </div>
+    </section>
+    <!-- Machine Learning Section-->
+
+    <section class="page-section" id="ml">
+      <div class="container">
+        <!-- Contact Section Heading-->
+
+        <h2 class=
+        "page-section-heading text-center text-uppercase text-secondary mb-0">
+          Machine Learning
+        </h2>
+        <!-- Icon Divider-->
+
+        <div class="divider-custom">
+          <div class="divider-custom-line">
+          </div>
+
+          <div class="divider-custom-icon">
+            <i class="fas fa-star"></i>
+          </div>
+
+          <div class="divider-custom-line">
+          </div>
+        </div>
+        <!--ML overview -->
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-xl-7">
+            <p>
+              Machine learning is subfield of artificial intelligence that allows software applications to become more accurate at predicting outcomes without being explicitly programmed to do so.
+Machine learning algorithms use historical data as as input to predict new output values. The three types of machine learning includes supervised machine learning, unsupervised machine learning, and reinforcement learning. Supervised machine learning is when data is given to predict future outcomes. Unsupervised machine learning uses a machine algorithm from previous data to predict future outcomes. Reinforcement learning is output based on the state of the current input, then the next input depends on the previous input.
+
+
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Portfolio Section-->
+
+    <section class="page-section portfolio" id="eda">
+      <div class="container">
+        <!-- Portfolio Section Heading-->
+
+        <h2 class=
+        "text-center text-uppercase text-secondary mb-0">
+          Read More About Our ML Models
+        </h2>
+        <!-- Icon Divider-->
+
+        <div class="divider-custom">
+          <div class="divider-custom-line">
+          </div>
+
+          <div class="divider-custom-icon">
+            <i class="fas fa-star"></i>
+          </div>
+
+          <div class="divider-custom-line">
+          </div>
+        </div>
+        <!-- Portfolio Grid Items-->
+
+        <div class="row justify-content-center">
+          <!-- -->
+
+          <div class="col-md-6 col-lg-4 mb-5">
+            <h3 style = 'text-align:center'>
+               Random Forests
+            </h3>
+            <div class="portfolio-item mx-auto" data-bs-target="#ml1"
+            data-bs-toggle="modal">
+              <div class=
+              "portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                <div class=
+                "portfolio-item-caption-content text-center text-white">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img alt="..." class="img-fluid" src=
+              "https://www.tibco.com/sites/tibco/files/media_entity/2021-05/random-forest-diagram.svg">
+            </div>
+          </div>
+          <!-- ML Item 2-->
+
+          <div class="col-md-6 col-lg-4 mb-5">
+            <h3 style = 'text-align:center'>
+               Support Vector Machines
+            </h3>
+            <div class="portfolio-item mx-auto" data-bs-target="#ml2"
+            data-bs-toggle="modal">
+              <div class=
+              "portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                <div class=
+                "portfolio-item-caption-content text-center text-white">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img alt="..." class = 'img-fluid' src=
+              "https://editor.analyticsvidhya.com/uploads/729834.png">
+            </div>
+          </div>
+          <!-- ML Item 3-->
+
+          <div class="col-md-6 col-lg-4 mb-5">
+            <h3 style = 'text-align:center'>
+               Logistic Regression
+            </h3>
+            <div class="portfolio-item mx-auto" data-bs-target="#ml3"
+            data-bs-toggle="modal">
+              <div class=
+              "portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                <div class=
+                "portfolio-item-caption-content text-center text-white">
+                  <i class="fas fa-plus fa-3x"></i>
+                </div>
+              </div>
+              <img alt="..." class="img-fluid" src=
+                   'https://image3.slideserve.com/6047919/logistic-regression-curve-l.jpg'>
+            </div>
+          </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- CONCLUSION-->
+
+    <section class="page-section bg-secondary text-white mb-0" id="conclusion">
+      <div class="container">
+        <!-- About Section Heading-->
+
+        <h2 class="page-section-heading text-center text-uppercase text-white">
+          CONCLUSION
+        
+        </h2>
+        <!-- Icon Divider-->
+
+        <div class="divider-custom divider-light">
+          <div class="divider-custom-line">
+          </div>
+
+          <div class="divider-custom-icon">
+            <i class="fas fa-star"></i>
+          </div>
+
+          <div class="divider-custom-line">
+          </div>
+        </div>
+        <!-- Conclusion Section Content-->
+
+        <div class="row">
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <img src = https://media.giphy.com/media/7TJXK0wFlYVeJYk3yH/giphy.gif>
+          </div>
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <p class="lead">
+              With the several different models we have coded, we can most likely assess with reliable accuracy a person’s risk for heart disease. While as of now the random forest model was most accurate, reaching 99% accuracy, we can continue to improve the other models to improve their accuracy rate as well. Additionally, we coped with a relatively small dataset and minimal prior coding experience, so in the future we can implement more AI and use this knowledge as a foundation to achieve greater results.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <br>
+    <h2 class=
+        "text-center text-uppercase text-secondary mb-0">
+           Meet the Team!
+        </h2>
+        <!-- Icon Divider-->
+
+        <div class="divider-custom">
+          <div class="divider-custom-line">
+          </div>
+
+          <div class="divider-custom-icon">
+            <i class="fas fa-star"></i>
+          </div>
+
+          <div class="divider-custom-line">
+          </div>
+        </div>
+    <!-- Footer-->
+    <section id = 'about'>
+    <footer class="footer text-center">
+      <div class="container"> 
+        <div class="row">
+          <!-- Footer Location-->
+         <!-- new name here -->
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">
+              Ava Cacao
+            </h4>
+             <img src = https://media.giphy.com/media/rtRflhLVzbNWU/source.gif height = 250 width = 300>
+            <p class="lead mb-0">
+              <br> Give me a <br/> &lt;br&gt;.
+            
+            </p>
+          </div>
+          
+          <!-- new name -->
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">
+              Sid Muralidaran
+            </h4>
+             <img src = https://media0.giphy.com/media/YAlhwn67KT76E/200.gif>
+            <p class="lead mb-0">
+          <br>   My brain after seeing HTML for the first time
+             
+            </p>
+          </div>
+          
+          <!-- new name -->
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">
+              Shriya Koul
+            </h4>
+             <img src = https://media.giphy.com/media/3oEjI3Gy1sguYDYZTG/giphy.gif height = 250 width = 300>
+            <p class="lead mb-0">
+             
+              <br> Debugging is like being the detective in a crime drama where you are also the murderer.
+             
+            </p>
+          </div>
+        
+          
+          <!-- Footer Social Icons-->
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">
+              Ayden McDade
+            </h4>
+             <img src = https://media1.giphy.com/media/hYfSTVjMMwGSVZy9vk/giphy.gif?cid=ecf05e47grpoo3zztr8qbej6wxo45mat4dfv2z9ie2a723rs&rid=giphy.gif&ct=s
+        
+                  height = 250 width = 300>
+            <p class="lead mb-0">
+             
+              <br> My brain after the first day of HTML.
+              
+            </p>
+          </div>
+
+          <!-- Footer About Text-->
+
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">
+              Rocco Del Vecchio
+            </h4>
+             <iframe src="https://giphy.com/embed/3o7TKMt1VVNkHV2PaE" width="250" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            <p class="lead mb-0"> Just smile and wave 
+             
+
+              
+            </p>
+          </div>
+         
+          
+        <!-- new name -->
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <br>
+          <br>
+            <h4 class="text-uppercase mb-4">
+              Max Ivanov
+            </h4>
+             <img src = "https://media.giphy.com/media/tvU9iTev6uBIQ/giphy.gif" height = 250 width = 300>
+            <p class="lead mb-0">
+             
+              <br> Me after starting to understand python and then going to HTML
+             
+            </p>
+          </div>
+      </div>
+      </div>
+      </footer>
+    </section>
+      
+      
+    <!-- Copyright Section-->
+
+    <div class="copyright py-4 text-center text-white">
+      <div class="container">
+        <small>Copyright © Parallel Processing 2022</small>
+      </div>
+    </div>
+    <!-- Portfolio Modals-->
+    <!-- Portfolio Modal 1-->
+
+    <div aria-hidden="true" aria-labelledby="portfolioModal1" class=
+    "portfolio-modal modal fade" id="portfolioModal1" tabindex="-1">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <button aria-label="Close" class="btn-close" data-bs-dismiss=
+            "modal" type="button"></button>
+          </div>
+
+          <div class="modal-body text-center pb-5">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Portfolio Modal - Title-->
+
+                  <h2 class=
+                  "portfolio-modal-title text-secondary text-uppercase mb-0">
+                    Correlation heatmap
+                  </h2>
+                  <!-- Icon Divider-->
+
+                  <div class="divider-custom">
+                    <div class="divider-custom-line">
+                    </div>
+
+                    <div class="divider-custom-icon">
+                      <i class="fas fa-star"></i>
+                    </div>
+
+                    <div class="divider-custom-line">
+                    </div>
+                  </div>
+                  <!-- Portfolio Modal - Image-->
+                  <p align="center">
+                   <iframe height="700" src='heatmap.html' width= 
+                           "700"></iframe></p>
+                  <!-- Portfolio Modal - Text-->
+          
+                  
+
+                  <p class="mb-4">
+                  Correlation heat maps are used to determine which variables are correlated to one another and how strong the connection is. The color of the grid represents a positive, or a negative correlation, and the shade indicates the strength of the correlation.
+
+                  </p>
+                  <button class="btn btn-primary" data-bs-dismiss=
+                  "modal"><i class="fas fa-xmark fa-fw"></i> Close
+                  Window</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio Modal 2-->
+
+    <div aria-hidden="true" aria-labelledby="portfolioModal2" class=
+    "portfolio-modal modal fade" id="portfolioModal2" tabindex="-1">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <button aria-label="Close" class="btn-close" data-bs-dismiss=
+            "modal" type="button"></button>
+          </div>
+
+          <div class="modal-body text-center pb-5">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Portfolio Modal - Title-->
+
+                  <h2 class=
+                  "portfolio-modal-title text-secondary text-uppercase mb-0">
+                    Bubbleplot
+                  </h2>
+                  <!-- Icon Divider-->
+
+                  <div class="divider-custom">
+                    <div class="divider-custom-line">
+                    </div>
+
+                    <div class="divider-custom-icon">
+                      <i class="fas fa-star"></i>
+                    </div>
+
+                    <div class="divider-custom-line">
+                    </div>
+                  </div>
+                  <!-- Portfolio Modal - Image-->
+                  <iframe height="500" src='bubbleplot.html' width=
+                  "700"></iframe> <!-- Portfolio Modal - Text-->
+
+                  <p class="mb-4">
+                    This bubbleplot to demonstrates the correlation between a
+                    person’s age and their resting blood pressure. The average
+                    resting blood pressure from ages 40 to 65 is around
+                    120-140. The color of the points represents the sex of the
+                    person and the size represents the person’s cholesterol.
+                  </p>
+                  <button class="btn btn-primary" data-bs-dismiss=
+                  "modal"><i class="fas fa-xmark fa-fw"></i> Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio Modal 3-->
+
+    <div aria-hidden="true" aria-labelledby="portfolioModal3" class=
+    "portfolio-modal modal fade" id="portfolioModal3" tabindex="-1">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <button aria-label="Close" class="btn-close" data-bs-dismiss=
+            "modal" type="button"></button>
+          </div>
+
+          <div class="modal-body text-center pb-5">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Portfolio Modal - Title-->
+
+                  <h2 class=
+                  "portfolio-modal-title text-secondary text-uppercase mb-0">
+                    Scatterplot of Cholesterol and Age
+                  </h2>
+                  <!-- Icon Divider-->
+
+                  <div class="divider-custom">
+                    <div class="divider-custom-line">
+                    </div>
+
+                    <div class="divider-custom-icon">
+                      <i class="fas fa-star"></i>
+                    </div>
+
+                    <div class="divider-custom-line">
+                    </div>
+                  </div>
+                  <!-- Portfolio Modal - Image-->
+                  <iframe height="500" src='scatter_chol.html' width=
+                  "700"></iframe> <!-- Portfolio Modal - Text-->
+
+                  <p class="mb-4">
+                    This scatter plot compares the relationship between
+                    cholesterol and age. The scatterplot shows that when you
+                    get older you have an increased risk of developing high
+                    cholesterol.
+                  </p>
+                  <button class="btn btn-primary" data-bs-dismiss=
+                  "modal"><i class="fas fa-xmark fa-fw"></i> Close
+                  Window</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio Modal 4-->
+
+    <div aria-hidden="true" aria-labelledby="portfolioModal4" class=
+    "portfolio-modal modal fade" id="portfolioModal4" tabindex="-1">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <button aria-label="Close" class="btn-close" data-bs-dismiss=
+            "modal" type="button"></button>
+          </div>
+
+          <div class="modal-body text-center pb-5">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Portfolio Modal - Title-->
+
+                  <h2 class=
+                  "portfolio-modal-title text-secondary text-uppercase mb-0">
+                    Catplot of Thalach and Age
+                  </h2>
+                  <!-- Icon Divider-->
+
+                  <div class="divider-custom">
+                    <div class="divider-custom-line">
+                    </div>
+
+                    <div class="divider-custom-icon">
+                      <i class="fas fa-star"></i>
+                    </div>
+
+                    <div class="divider-custom-line">
+                    </div>
+                  </div>
+                  <!-- Portfolio Modal - Image-->
+                 <img src='assets/img/Thalach.png' width = 700 height = 600>
+                  <!-- Portfolio Modal - Text-->
+
+                  <p class="mb-4">
+                   This catplot shows the correlation between the thalach and age while also showing the sex of 
+                    the patients by the color of their dot blue being male and orange female.
+                  </p>
+                  <button class="btn btn-primary" data-bs-dismiss=
+                  "modal"><i class="fas fa-xmark fa-fw"></i> Close
+                  Window</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio Modal 5-->
+
+    <div aria-hidden="true" aria-labelledby="portfolioModal5" class=
+    "portfolio-modal modal fade" id="portfolioModal5" tabindex="-1">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <button aria-label="Close" class="btn-close" data-bs-dismiss=
+            "modal" type="button"></button>
+          </div>
+
+          <div class="modal-body text-center pb-5">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Portfolio Modal - Title-->
+
+                  <h2 class=
+                  "portfolio-modal-title text-secondary text-uppercase mb-0">
+                    Barplot of Trestbps and Age
+                  </h2>
+                  <!-- Icon Divider-->
+
+                  <div class="divider-custom">
+                    <div class="divider-custom-line">
+                    </div>
+
+                    <div class="divider-custom-icon">
+                      <i class="fas fa-star"></i>
+                    </div>
+
+                    <div class="divider-custom-line">
+                    </div>
+                  </div>
+                  <!-- Portfolio Modal - Image-->
+                  <img alt="..." class="img-fluid rounded mb-5" src=
+                  "assets/img/Trestbps_barplot.png"> 
+                  <!-- Portfolio Modal - Text-->
+
+                  <p class="mb-4">
+                    This bar graph shows the connection between trestbps and age. The top bar plot represents the men's data, while the bottom bar plot represents the women's data. The color indicates whether you are at risk for developing heart disease.
+                  </p>
+                  <button class="btn btn-primary" data-bs-dismiss=
+                  "modal"><i class="fas fa-xmark fa-fw"></i> Close
+                  Window</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio Modal 6-->
+
+    <div aria-hidden="true" aria-labelledby="portfolioModal6" class=
+    "portfolio-modal modal fade" id="portfolioModal6" tabindex="-1">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <button aria-label="Close" class="btn-close" data-bs-dismiss=
+            "modal" type="button"></button>
+          </div>
+
+          <div class="modal-body text-center pb-5">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Portfolio Modal - Title-->
+
+                  <h2 class=
+                  "portfolio-modal-title text-secondary text-uppercase mb-0">
+                    Catplot
+                  </h2>
+                  <!-- Icon Divider-->
+
+                  <div class="divider-custom">
+                    <div class="divider-custom-line">
+                    </div>
+
+                    <div class="divider-custom-icon">
+                      <i class="fas fa-star"></i>
+                    </div>
+
+                    <div class="divider-custom-line">
+                    </div>
+                  </div>
+                  <!-- Portfolio Modal - Image-->
+
+                  <div align="center">
+                    <img alt="Catplot" height="300" src=
+                    "assets/img/catplot_oldpeaksex.png" width="300">
+                  </div>
+                  <!-- Portfolio Modal -Text-->
+
+                  <p class="mb-4">
+                    Catplots shows the relationship between a numerical and one or more categorical variables using visual representations. This visualization shows the relation between the level of ST depression induced by exercise relative to rest in women and men. Some of the parameters include the names of variables in data, colors for different elements, and more.
+
+                    Nam.
+                  </p>
+                  <button class="btn btn-primary" data-bs-dismiss=
+                  "modal"><i class="fas fa-xmark fa-fw"></i> Close
+                  Window</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ML Model 1-->
+
+    <div aria-hidden="true" aria-labelledby="portfolioModal1" class=
+    "portfolio-modal modal fade" id="ml1" tabindex="-1">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <button aria-label="Close" class="btn-close" data-bs-dismiss=
+            "modal" type="button"></button>
+          </div>
+
+          <div class="modal-body text-center pb-5">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Portfolio Modal - Title-->
+
+                  <h2 class=
+                  "portfolio-modal-title text-secondary text-uppercase mb-0">
+                    Random Forest
+                  </h2>
+                  <!-- Icon Divider-->
+
+                  <div class="divider-custom">
+                    <div class="divider-custom-line">
+                    </div>
+
+                    <div class="divider-custom-icon">
+                      <i class="fas fa-star"></i>
+                    </div>
+
+                    <div class="divider-custom-line">
+                    </div>
+                  </div>
+                  <!-- Portfolio Modal - Image-->
+                 
+                  <img alt="..." height="400" src=
+                    "assets/img/confusiion.png" width="600">
+                  <img alt="..." height="400" src= "https://i.ytimg.com/vi/goPiwckWE9M/maxresdefault.jpg" width= "700">
+               
+    <!-- Portfolio Modal - Text-->
+
+                  <p class="mb-4">
+                    Random Forest is a machine learning algorithm that creates multiple decision trees and takes the average of the outputs to make a prediction. To increase the accuracy of this model, outliers were removed from the dataset. A confusion matrix was used to assess the performance of my model. There are 337 true positives, 19 false negatives, 28 false positives, and 334 true negatives.
+
+                  </p>
+                  <button class="btn btn-primary" data-bs-dismiss=
+                  "modal"><i class="fas fa-xmark fa-fw"></i> Close
+                  Window</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ML Modal 2-->
+
+    <div aria-hidden="true" aria-labelledby="portfolioModal2" class=
+    "portfolio-modal modal fade" id="ml2" tabindex="-1">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <button aria-label="Close" class="btn-close" data-bs-dismiss=
+            "modal" type="button"></button>
+          </div>
+
+          <div class="modal-body text-center pb-5">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Portfolio Modal - Title-->
+
+                  <h2 class=
+                  "portfolio-modal-title text-secondary text-uppercase mb-0">
+                    Support Vector Machine 
+                  </h2>
+                  <!-- Icon Divider-->
+
+                  <div class="divider-custom">
+                    <div class="divider-custom-line">
+                    </div>
+
+                    <div class="divider-custom-icon">
+                      <i class="fas fa-star"></i>
+                    </div>
+
+                    <div class="divider-custom-line">
+                    </div>
+                  </div>
+                  <!-- Portfolio Modal - Image-->
+                  
+                  <img height="500" src='assets/img/svmmodel.png' width=
+                  "500"> <!-- Portfolio Modal - Text-->
+
+                  <p class="mb-4">
+                    SVM, or support vector machines, are models are supervised learning models with associated learning algorithms that analyze data for classification and regression analysis. SVM works by mapping data to a high-dimensional feature space so that data points can be categorized. It is a linear model for classification and regression problems. The accuracy of this model is about 72%, and has 64 true positives, 27 false positives, 29 false negatives, and 85 true negatives.
+
+
+
+
+                  
+                    
+                    <button class="btn btn-primary" data-bs-dismiss=
+                  "modal"><i class="fas fa-xmark fa-fw"></i> Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ML Modal 3-->
+
+    <div aria-hidden="true" aria-labelledby="portfolioModal3" class=
+    "portfolio-modal modal fade" id="ml3" tabindex="-1">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header border-0">
+            <button aria-label="Close" class="btn-close" data-bs-dismiss=
+            "modal" type="button"></button>
+          </div>
+
+          <div class="modal-body text-center pb-5">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <!-- Portfolio Modal - Title-->
+
+                  <h2 class=
+                  "portfolio-modal-title text-secondary text-uppercase mb-0">
+                   Logistic Regression
+                  </h2>
+                  <!-- Icon Divider-->
+
+                  <div class="divider-custom">
+                    <div class="divider-custom-line">
+                    </div>
+
+                    <div class="divider-custom-icon">
+                      <i class="fas fa-star"></i>
+                    </div>
+
+                    <div class="divider-custom-line">
+                    </div>
+                  </div>
+                  <!-- Portfolio Modal - Image-->
+                  <img height="500" src='assets/img/logsitic regression complete.png' width=
+                  "700"> <!-- Portfolio Modal - Text-->
+
+                  <p class="mb-4">
+                    Logistic regression is a supervised learning model that predicts a binary outcome based on the prior outcomes of the data by examining the relationship between the target variable and the independent variables. Our logistic regression model's average accuracy was in the upper 80s.
+                  </p>
+                  <button class="btn btn-primary" data-bs-dismiss=
+                  "modal"><i class="fas fa-xmark fa-fw"></i> Close
+                  Window</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src=
+    "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+     
+    <script src="js/scripts.js"></script> 
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+     
+    <!-- * *                               SB Forms JS                               * *-->
+     
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+     
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+     
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+  </body>
+</html>
